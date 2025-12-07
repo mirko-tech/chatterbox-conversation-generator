@@ -5,8 +5,8 @@
 [![Python Versions](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Open Issues](https://img.shields.io/github/issues/mirko-tech/chatterbox-dialogue-generator)](https://github.com/mirko-tech/chatterbox-dialogue-generator/issues)
-[![Stars](https://img.shields.io/github/stars/mirko-tech/chatterbox-dialogue-generator?style=social)](https://github.com/mirko-tech/chatterbox-dialogue-generator)
+[![Open Issues](https://img.shields.io/github/issues/mirko-tech/chatterbox-conversation-generator)](https://github.com/mirko-tech/chatterbox-conversation-generator/issues)
+[![Stars](https://img.shields.io/github/stars/mirko-tech/chatterbox-conversation-generator?style=social)](https://github.com/mirko-tech/chatterbox-conversation-generator)
 
 **Generate AI Conversations with Voice Cloning & Natural Audio Processing**
 
@@ -81,8 +81,8 @@ outputs/
 
 ### Windows
 ```bash
-git clone https://github.com/mirko-tech/chatterbox-dialogue-generator.git
-cd chatterbox-dialogue-generator
+git clone https://github.com/mirko-tech/chatterbox-conversation-generator.git
+cd chatterbox-conversation-generator
 py -3.11 -m venv .venv
 .venv\Scripts\activate
 install_dependencies.bat
@@ -90,8 +90,8 @@ install_dependencies.bat
 
 ### macOS / Linux
 ```bash
-git clone https://github.com/mirko-tech/chatterbox-dialogue-generator.git
-cd chatterbox-dialogue-generator
+git clone https://github.com/mirko-tech/chatterbox-conversation-generator.git
+cd chatterbox-conversation-generator
 python3.11 -m venv .venv
 source .venv/bin/activate
 chmod +x install_dependencies.sh
@@ -198,7 +198,7 @@ All processing is automatic but can be disabled with `--no-processing`.
 ## 🧩 Project Structure
 
 ```
-chatterbox-dialogue-generator/
+chatterbox-conversation-generator/
 ├── app/
 │   ├── __init__.py              # Package initialization
 │   ├── dialogue_generator.py   # Dialogue parsing
@@ -341,9 +341,9 @@ Check [TODO.md](TODO.md) for planned features and improvements.
 
 If this tool helps you, consider starring the repo — it motivates development and helps others discover it.
 
-**📌 [Star the project ⭐](https://github.com/mirko-tech/chatterbox-dialogue-generator)** — takes 2 seconds
-**📌 [Open an issue](https://github.com/mirko-tech/chatterbox-dialogue-generator/issues)** — even ideas are welcome
-**📌 [Create a PR](https://github.com/mirko-tech/chatterbox-dialogue-generator/pulls)** — small improvements appreciated
+**📌 [Star the project ⭐](https://github.com/mirko-tech/chatterbox-conversation-generator)** — takes 2 seconds
+**📌 [Open an issue](https://github.com/mirko-tech/chatterbox-conversation-generator/issues)** — even ideas are welcome
+**📌 [Create a PR](https://github.com/mirko-tech/chatterbox-conversation-generator/pulls)** — small improvements appreciated
 
 ---
 
@@ -361,4 +361,4 @@ Built with ❤️ by the open source community.
 
 ---
 
-**Made something cool with this tool? Share it in [Discussions](https://github.com/mirko-tech/chatterbox-dialogue-generator/discussions)!**
+**Made something cool with this tool? Share it in [Discussions](https://github.com/mirko-tech/chatterbox-conversation-generator/discussions)!**
