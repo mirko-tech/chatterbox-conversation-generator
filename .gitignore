@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+
+
+# Virtual environments
+.venv/
+
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Output files
+outputs/*.wav
+outputs/*_lines/
+
+# Legacy code
+legacy/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+voice1_wav="voices/agent.flac"
+voice2_wav="voices/customer.flac"
+
+voice1="Hello! Thank you for calling our support center. How can I help you today?"
+voice2="Hi, I'm having trouble logging into my account. It keeps saying my password is incorrect."
+voice1="I'm sorry to hear that. Let me help you reset your password. Can you provide your email address?"
+voice2="Sure, it's john.doe@example.com"
+voice1="Thank you. I've sent a password reset link to that email. Please check your inbox."
+voice2="Got it! I see the email. Thank you so much for your help!"
+voice1="You're welcome! Is there anything else I can assist you with today?"
+voice2="No, that's all. Have a great day!"
+voice1="You too! Goodbye!"

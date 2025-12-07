@@ -1,0 +1,57 @@
+# Chatterbox Dialogue Generator - Dependencies
+#
+# ⚡ RECOMMENDED INSTALLATION METHOD ⚡
+# Use the installation scripts for automatic setup in the correct order:
+#
+#   Windows:       install_dependencies.bat
+#   macOS/Linux:   ./install_dependencies.sh
+#
+# These scripts handle dependency order and potential conflicts automatically.
+#
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# Manual Installation (Advanced Users):
+#
+# 1. Upgrade pip:
+#    python -m pip install --upgrade pip setuptools wheel
+#
+# 2. Install dependencies in this specific order:
+#    pip install torch==2.6.0 torchaudio==2.6.0 numpy==1.24.0 pydub==0.25.1
+#    pip install chatterbox-tts --no-deps
+#    pip install resemble-perth==1.0.1 librosa==0.10.0 safetensors==0.5.3 s3tokenizer pykakasi==2.3.0
+#    pip install transformers==4.46.3 diffusers==0.29.0 gradio==5.44.1 conformer==0.3.2
+#    pip install pkuseg==0.0.25
+#
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# IMPORTANT NOTES:
+# - Python 3.11 or 3.12 REQUIRED (3.13+ not supported yet)
+# - Chatterbox TTS requires numpy<1.26.0 (compatibility constraint)
+# - Installation order matters due to dependency conflicts
+# - chatterbox-tts must be installed with --no-deps flag
+#
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Core ML dependencies
+torch==2.6.0
+torchaudio==2.6.0
+numpy==1.24.0
+pydub==0.25.1
+
+# Chatterbox TTS dependencies
+resemble-perth==1.0.1
+librosa==0.10.0
+safetensors==0.5.3
+s3tokenizer
+pykakasi==2.3.0
+pkuseg==0.0.25
+
+# Transformers and diffusion models
+transformers==4.46.3
+diffusers==0.29.0
+gradio==5.44.1
+conformer==0.3.2
+
+# Note: chatterbox-tts itself is NOT in this file
+# Install it separately: pip install chatterbox-tts --no-deps
+# Or use the installation scripts which handle this automatically
