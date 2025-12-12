@@ -5,10 +5,10 @@ A tool for generating synthetic dialogues and converting them to audio
 using Chatterbox TTS voice cloning.
 
 Usage:
-    python -m app.main <dialogue_file> [options]
+    python -m apps.api.main <dialogue_file> [options]
 
 Example:
-    python -m app.main examples/conversation.txt --output my_dialogue --silence 700
+    python -m apps.api.main examples/conversation.txt --output my_dialogue --silence 700
 """
 
 import argparse
@@ -29,16 +29,16 @@ def parse_arguments():
         epilog="""
 Examples:
   # Basic usage
-  python -m app.main conversation.txt
+  python -m apps.api.main conversation.txt
 
   # Custom output name and longer pauses
-  python -m app.main debate.txt --output debate_audio --silence 700
+  python -m apps.api.main debate.txt --output debate_audio --silence 700
 
   # Italian dialogue with custom voice settings
-  python -m app.main dialogo.txt --language it --exaggeration 2.5
+  python -m apps.api.main dialogo.txt --language it --exaggeration 2.5
 
   # Don't save individual lines
-  python -m app.main quick.txt --no-individual
+  python -m apps.api.main quick.txt --no-individual
         """
     )
 
@@ -154,8 +154,8 @@ def main():
         validate_arguments(args)
 
         # Import heavy dependencies only when needed
-        from app.dialogue_generator import load_dialogue
-        from app.voice_pipeline import create_dialogue_audio
+        from apps.api.dialogue_generator import load_dialogue
+        from apps.api.voice_pipeline import create_dialogue_audio
 
         print("=" * 60)
         print("Chatterbox Dialogue Generator")
