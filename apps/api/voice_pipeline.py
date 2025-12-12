@@ -448,7 +448,8 @@ class VoicePipeline:
                          cfg_weight: float = 0.5,
                          save_individual: bool = True,
                          process_audio: bool = True,
-                         normalize_text: bool = True) -> Path:
+                         normalize_text: bool = True,
+                         progress_callback: Optional[callable] = None) -> Path:
         """
         Convert dialogue turns into a single WAV file.
 
@@ -491,6 +492,15 @@ class VoicePipeline:
         for i, line in enumerate(dialogue, 1):
             print(f"[{i}/{len(dialogue)}] {line['voice']}:")
 
+            # Update progress
+            if progress_callback:
+                progress_callback({
+                    "current_line": i,
+                    "total_lines": len(dialogue),
+                    "status": "generating_line",
+                    "message": f"Generating line {i} of {len(dialogue)}..."
+                })
+
             # Generate audio for this line
             wav = self.generate_line(
                 text=line['text'],
@@ -518,6 +528,13 @@ class VoicePipeline:
 
         # Concatenate all audio segments
         print("\n[*] Merging audio segments...")
+        if progress_callback:
+            progress_callback({
+                "current_line": len(dialogue),
+                "total_lines": len(dialogue),
+                "status": "merging",
+                "message": "Assembling final conversation..."
+            })
         full_dialogue = torch.cat(audio_segments, dim=1)
 
         # Save the final audio file
@@ -569,7 +586,8 @@ def create_dialogue_audio(dialogue: List[Dict],
                          save_individual: bool = True,
                          process_audio: bool = True,
                          normalize_text: bool = True,
-                         device: str = "cpu") -> Path:
+                         device: str = "cpu",
+                         progress_callback: Optional[callable] = None) -> Path:
     """
     Convenience function to generate audio from dialogue data.
 
@@ -603,5 +621,6 @@ def create_dialogue_audio(dialogue: List[Dict],
         cfg_weight=cfg_weight,
         save_individual=save_individual,
         process_audio=process_audio,
-        normalize_text=normalize_text
+        normalize_text=normalize_text,
+        progress_callback=progress_callback
     )

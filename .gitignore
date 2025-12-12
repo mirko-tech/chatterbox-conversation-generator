@@ -23,3 +23,6 @@ legacy/
 # OS
 .DS_Store
 Thumbs.db
+
+#NODE MODULES
+apps/web/node_modules

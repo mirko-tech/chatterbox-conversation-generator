@@ -52,6 +52,11 @@ diffusers==0.29.0
 gradio==5.44.1
 conformer==0.3.2
 
+# Web API dependencies
+fastapi==0.115.5
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
 # Note: chatterbox-tts itself is NOT in this file
 # Install it separately: pip install chatterbox-tts --no-deps
 # Or use the installation scripts which handle this automatically

@@ -61,7 +61,7 @@ Most TTS tools generate single lines.
 ## ⚡ Quick Start
 
 ```bash
-python -m app.main examples/sample_conversation.txt
+python -m apps.api.main examples/sample_conversation.txt
 ```
 
 **Outputs:**
@@ -180,6 +180,58 @@ python -m app.main conversation.txt --no-processing
 
 ---
 
+## 🌐 Web UI
+
+In addition to the CLI, you can use the web interface for a more visual experience.
+
+### Starting the Web UI
+
+1. **Start the backend API server:**
+   ```bash
+   # From the project root directory
+   python -m app.api_server
+   ```
+   The API will be available at `http://localhost:8000`
+
+   API documentation: `http://localhost:8000/docs`
+
+2. **Start the frontend development server (in a new terminal):**
+   ```bash
+   cd web
+   npm install  # First time only
+   npm run dev
+   ```
+   The web UI will be available at `http://localhost:5173`
+
+### Web UI Features
+
+- **Visual Dialogue Editor** - Write or paste dialogue with syntax highlighting
+- **Interactive Settings Panel** - Adjust all parameters with sliders and dropdowns
+- **Real-time Status Updates** - See generation progress and errors
+- **One-click Download** - Download generated audio files directly from browser
+- **Example Loader** - Load sample dialogues to get started quickly
+- **Dark Theme** - Easy on the eyes during long editing sessions
+
+### Production Deployment
+
+To build the frontend for production:
+
+```bash
+cd web
+npm run build
+```
+
+This creates an optimized build in `web/dist/` that you can serve with any static file server.
+
+For production API deployment, use a production ASGI server:
+
+```bash
+pip install gunicorn
+gunicorn app.api_server:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+```
+
+---
+
 ## 🔊 Audio Processing Pipeline
 
 What makes conversations sound natural:
@@ -203,7 +255,17 @@ chatterbox-conversation-generator/
 │   ├── __init__.py              # Package initialization
 │   ├── dialogue_generator.py   # Dialogue parsing
 │   ├── voice_pipeline.py        # TTS generation & audio processing
-│   └── main.py                  # CLI interface
+│   ├── main.py                  # CLI interface
+│   └── api_server.py            # FastAPI backend for web UI
+├── web/                         # React frontend (Web UI)
+│   ├── src/
+│   │   ├── components/          # React components
+│   │   ├── api/                 # API client
+│   │   ├── App.tsx              # Main app component
+│   │   └── main.tsx             # Entry point
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── tailwind.config.js
 ├── voices/                      # Your voice template files (add your own)
 ├── outputs/                     # Generated audio files
 ├── examples/                    # Example dialogue files
@@ -357,7 +419,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 This project uses [Chatterbox TTS](https://github.com/resemble-ai/chatterbox) for voice generation.
 
-Built with ❤️ by the open source community.
+Built with ❤️ by Mirko Guarnaccia for the open source community.
 
 ---
 
